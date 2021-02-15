@@ -95,7 +95,7 @@ def main():
         headers = next(f_csv)
         num = 1
         with open('data{}.csv'.format(fulltimes), 'a+') as f0: # 写入检测后新data
-           print('Channel,Group,Source,Link', file=f0)
+            print('Channel,Group,Source,Link', file=f0)
             for row in f_csv:
                 try:
                     ret = check_channel(row,num)
