@@ -15,7 +15,7 @@ TLDR: 太闲了。
 - `merged` 为全部直播源，`groups` 文件夹里为各个直播源的分类。
 - 带 `simple` 的为纯净格式**（不带来源与分辨率）**
 - 目前只输出了 `txt` 格式，急着用的可以自行用 [Telelist](https://guihet.com/tvlive-telelist.html) 进行转换，其他格式慢慢写。
-- 关于分类： `difang` 分类为地方频道与 IPTV 特色频道，`cctv` 为 CCTV 下属频道（含部分特色频道与 CGTN），`weishi` 为地方卫视（含凤凰卫视）
+- 关于分类： `difang` 分类为地方频道与 IPTV 特色频道（含部分海外频道），`cctv` 为 CCTV 下属频道（含部分特色频道与 CGTN），`weishi` 为地方卫视（含凤凰卫视）
 - 关于来源与命名：频道命名尽量遵循[ EPG 频道列表](http://epg.51zmt.top:8000/) 中的格式进行命名统一以确保正确匹配；来源命名多使用 IPIP 进行 IP 段标注，`difang` 分类为目测（小地方台基本上只有官方供源，要是挨个查 IP 的话会出事）
 - 现阶段可以下载直播源上传至 [ EPG 频道列表](http://epg.51zmt.top:8000/)自动匹配节目表。
 - 脚本所做的工作：通过 `requests` 和 `ffprobe` 检测直播源，后进行分类，最后用有效信息输出新的 `csv`。
