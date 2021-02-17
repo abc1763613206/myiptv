@@ -7,15 +7,15 @@
 ----
 
 - 总合并直播源：
-  - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged.txt)
-  - 不带来源： [`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged-simple.txt)
+  - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged.m3u)
+  - 不带来源： [`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/merged-simple.m3u)
 - 分类
   - `cctv`
-    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.txt)
-    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.txt)
+    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.m3u)
+    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.m3u)
   - `difang`
-    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.txt)
-    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.txt)
+    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.m3u)
+    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.m3u)
   - `difang`
-    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang.txt)
-    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang-simple.txt)
+    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang.m3u)
+    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/difang-simple.m3u)
