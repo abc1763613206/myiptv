@@ -1,5 +1,6 @@
 安徽卫视,http://ivi.bupt.edu.cn/hls/ahtv.m3u8
 安徽卫视,http://183.207.249.15/PLTV/3/224/3221225634/index.m3u8
+安徽卫视,http://183.207.249.9/PLTV/3/224/3221225634/index.m3u8
 安徽卫视,http://223.110.245.143/ott.js.chinamobile.com/PLTV/3/224/3221225800/index.m3u8
 安徽卫视,http://121.31.30.90:8085/ysten-business/live/anhuistv/1.m3u8
 安徽卫视,http://121.31.30.90:8085/ysten-business/live/anhuistv/yst.m3u8
@@ -85,6 +86,7 @@
 黑龙江卫视,http://223.110.243.169/PLTV/3/224/3221227252/index.m3u8
 黑龙江卫视,http://m-tvlmedia.public.bcs.ysten.com/ysten-business/live/hdheilongjiangstv/1.m3u8
 黑龙江卫视FHD,http://223.110.245.161/ott.js.chinamobile.com/PLTV/3/224/3221227492/index.m3u8
+黑龙江卫视FHD,http://223.110.245.163/ott.js.chinamobile.com/PLTV/3/224/3221227252/index.m3u8
 黑龙江卫视FHD,http://223.110.245.165/ott.js.chinamobile.com/PLTV/3/224/3221227323/index.m3u8
 黑龙江卫视HD,http://ivi.bupt.edu.cn/hls/hljhd.m3u8
 黑龙江卫视HD,http://223.82.250.72/live/hdheilongjiangstv/1.m3u8
@@ -118,6 +120,7 @@
 江苏卫视,http://ivi.bupt.edu.cn/hls/jstv.m3u8
 江苏卫视,http://183.207.248.11/PLTV/4/224/3221225782/index.m3u8
 江苏卫视,http://121.31.30.90:8085/ysten-business/live/jiangsustv/1.m3u8
+江苏卫视,http://121.31.30.90:8085/ysten-business/live/jiangsustv/yst.m3u8
 江苏卫视HD,http://ivi.bupt.edu.cn/hls/jshd.m3u8
 江苏卫视HD,http://117.169.120.140:8080/live/hdjiangsustv/.m3u8
 江苏卫视HD,http://223.82.250.72/live/hdjiangsustv/1.m3u8
@@ -143,8 +146,10 @@
 内蒙古卫视,http://223.110.245.161/ott.js.chinamobile.com/PLTV/3/224/3221225836/index.m3u8
 内蒙古卫视,http://117.169.120.140:8080/live/neimenggustv/.m3u8
 内蒙古卫视,http://m-tvlmedia.public.bcs.ysten.com/ysten-business/live/neimenggustv/1.m3u8
+内蒙古卫视,http://121.31.30.90:8085/ysten-business/live/neimenggustv/1.m3u8
 内蒙古卫视,http://121.31.30.90:8085/ysten-business/live/neimenggustv/yst.m3u8
 宁夏卫视,http://ivi.bupt.edu.cn/hls/nxtv.m3u8
+宁夏卫视,http://183.207.248.11/PLTV/4/224/3221225842/index.m3u8
 宁夏卫视,http://223.110.245.151/ott.js.chinamobile.com/PLTV/3/224/3221225842/index.m3u8
 宁夏卫视,http://117.169.120.140:8080/live/ningxiastv/.m3u8
 宁夏卫视,http://m-tvlmedia.public.bcs.ysten.com/ysten-business/live/ningxiastv/1.m3u8
@@ -155,6 +160,7 @@
 青海卫视,http://121.31.30.90:8085/ysten-business/live/qinghaistv/yst.m3u8
 厦门卫视,http://ivi.bupt.edu.cn/hls/xmtv.m3u8
 厦门卫视,http://223.110.245.159/ott.js.chinamobile.com/PLTV/3/224/3221226996/index.m3u8
+山东卫视,http://ivi.bupt.edu.cn/hls/sdtv.m3u8
 山东卫视,http://223.110.245.149/ott.js.chinamobile.com/PLTV/3/224/3221225804/index.m3u8
 山东卫视,http://121.31.30.90:8085/ysten-business/live/shandongstv/1.m3u8
 山东卫视,http://121.31.30.90:8085/ysten-business/live/shandongstv/yst.m3u8
@@ -165,9 +171,11 @@
 山东卫视HD,http://121.31.30.90:8085/ysten-business/live/hdshandongstv/yst.m3u8
 山东卫视HD,http://39.135.32.25:6610/000000001000/1000000001000012807/index.m3u8?i
 山西卫视,http://ivi.bupt.edu.cn/hls/sxrtv.m3u8
+山西卫视,http://117.169.120.140:8080/live/shanxistv/.m3u8
 山西卫视,http://223.82.250.72/live/shanxistv/1.m3u8
 山西卫视,http://121.31.30.90:8085/ysten-business/live/shanxistv/1.m3u8
 山西卫视,http://121.31.30.90:8085/ysten-business/live/shanxistv/yst.m3u8
+陕西卫视,http://ivi.bupt.edu.cn/hls/sxtv.m3u8
 陕西卫视,http://223.82.250.72/live/shanxi1stv/1.m3u8
 陕西卫视,http://121.31.30.90:8085/ysten-business/live/shanxi1stv/yst.m3u8
 深圳卫视,http://ivi.bupt.edu.cn/hls/sztv.m3u8
@@ -189,6 +197,7 @@
 天津卫视,http://223.110.245.151/ott.js.chinamobile.com/PLTV/3/224/3221225808/index.m3u8
 天津卫视,http://m-tvlmedia.public.bcs.ysten.com/ysten-business/live/hdtianjinstv/1.m3u8
 天津卫视,http://121.31.30.90:8085/ysten-business/live/tianjinstv/1.m3u8
+天津卫视,http://121.31.30.90:8085/ysten-business/live/tianjinstv/yst.m3u8
 天津卫视FHD,http://223.110.245.155/ott.js.chinamobile.com/PLTV/3/224/3221227382/index.m3u8
 天津卫视FHD,http://223.110.245.165/ott.js.chinamobile.com/PLTV/3/224/3221227407/index.m3u8
 天津卫视HD,http://117.169.120.140:8080/live/hdtianjinstv/.m3u8
@@ -196,7 +205,6 @@
 天津卫视HD,http://121.31.30.90:8085/ysten-business/live/hdtianjinstv/yst.m3u8
 西藏卫视,http://ivi.bupt.edu.cn/hls/xztv.m3u8
 西藏卫视,http://media.vtibet.com/masvod/HLSLive/9/hanyuTV_q1.m3u8
-西藏卫视,http://117.169.120.140:8080/live/xizangstv/.m3u8
 西藏卫视,http://m-tvlmedia.public.bcs.ysten.com/ysten-business/live/xizangstv/1.m3u8
 西藏卫视,http://121.31.30.90:8085/ysten-business/live/xizangstv/1.m3u8
 西藏卫视,http://121.31.30.90:8085/ysten-business/live/xizangstv/yst.m3u8
