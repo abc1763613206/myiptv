@@ -22,6 +22,8 @@ SKIP_FFPROBE_MESSAGES = [re.compile(pattern) for pattern in (
 	'number of reference frames .+ exceeds max',
 )]
 
+uniqueList = []
+
 @func_set_timeout(12)
 def get_stream(num, clist, uri):
     try:
@@ -98,7 +100,11 @@ def main():
             print('Channel,Group,Source,Link', file=f0)
             for row in f_csv:
                 try:
-                    ret = check_channel(row,num)
+                    if row[3] in uniqueList:
+                        ret = False
+                    else:
+                        uniqueList.append(row[3]) 
+                        ret = check_channel(row,num)
                 except FunctionTimedOut as e:
                     #traceback.print_exc()
 
