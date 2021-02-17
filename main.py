@@ -7,6 +7,7 @@ import traceback
 import requests
 import subprocess
 import time
+import shutil
 from ffmpy import FFprobe
 from subprocess import PIPE
 from sys import stdout
@@ -92,6 +93,11 @@ def main():
     fulltimes = '-{}{}{}{}{}'.format(dt.year,dt.month,dt.day,dt.hour,dt.minute) # 时间后缀
     # times = fulltimes # 有时间后缀
     times = '' # 无时间后缀
+    # 清空旧文件
+    shutil.rmtree('groups')
+    os.mkdir('groups')
+    os.remove('merged.txt')
+    os.remove('merged-simple.txt')
     with open('data.csv') as f:
         f_csv = csv.reader(f)
         headers = next(f_csv)
