@@ -87,6 +87,23 @@ def print_info():
     print('Time: {}-{}-{} {}:{}'.format(dt.year,dt.month,dt.day,dt.hour,dt.minute))
     #subprocess.run(['ffprobe'])
 
+def rm_files(target, selection):
+    if selection == 1:  # 删目录
+        try:
+            shutil.rmtree(target)
+        except OSError:
+            pass
+        try:
+            os.mkdir(target)
+        except OSError:
+            pass
+    else: # 删文件
+        try:
+            os.remove(target)
+        except OSError:
+            pass   
+        
+
 def main():
     print_info()
     Total = 0
@@ -94,10 +111,9 @@ def main():
     # times = fulltimes # 有时间后缀
     times = '' # 无时间后缀
     # 清空旧文件
-    shutil.rmtree('groups')
-    os.mkdir('groups')
-    os.remove('merged.txt')
-    os.remove('merged-simple.txt')
+    rm_files('groups',1)
+    rm_files('merged.txt',2)
+    rm_files('merged-simple.txt',2)
     with open('data.csv') as f:
         f_csv = csv.reader(f)
         headers = next(f_csv)

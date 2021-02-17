@@ -5,16 +5,12 @@ CCTV-1FHD(江苏移动-1920*1088),http://223.110.245.159/ott.js.chinamobile.com/PLTV
 CCTV-1FHD(江苏移动-1920*1088),http://223.110.245.165/ott.js.chinamobile.com/PLTV/3/224/3221226316/index.m3u8
 CCTV-1FHD(江苏移动-1920*1088),http://223.110.245.165/ott.js.chinamobile.com/PLTV/3/224/3221227375/index.m3u8
 CCTV-1FHD(浙江移动-1920*1088),http://117.148.187.37/PLTV/88888888/224/3221226154/index.m3u8
-CCTV-1HD(北邮IVI-1920*1088),http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8
-CCTV-1HD(杭州华数-1280*720),http://125.210.152.10:8060/live/CCTV1HD_H265.m3u8
 CCTV-1HD(江苏移动-1920*1088),http://183.207.249.15/PLTV/3/224/3221225530/index.m3u8
 CCTV-1HD(江苏移动-1920*1088),http://223.110.245.159/ott.js.chinamobile.com/PLTV/3/224/3221225530/index.m3u8
 CCTV-1HD(江西移动-1920*1088),http://117.169.120.140:8080/live/cctv-1/.m3u8
 CCTV-1HD(江西移动-1280*720),http://223.82.250.72/live/hdcctv01/1.m3u8
 CCTV-1HD(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-1/1.m3u8
-CCTV-1HD(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-1/yst.m3u8
 CCTV-2(北邮IVI-720*576),http://ivi.bupt.edu.cn/hls/cctv2.m3u8
-CCTV-2HD(杭州华数-640*368),http://125.210.152.10:8060/live/CCTV2HD_H265.m3u8
 CCTV-3(北邮IVI-720*576),http://ivi.bupt.edu.cn/hls/cctv3.m3u8
 CCTV-3(江苏移动-1920*1088),http://183.207.249.5/PLTV/3/224/3221225588/index.m3u8
 CCTV-3(江苏移动-1920*1088),http://183.207.249.6/PLTV/3/224/3221225588/index.m3u8
@@ -66,7 +62,6 @@ CCTV-7(江苏移动-1920*1088),http://183.207.248.8:80/PLTV/3/224/3221225546/index.m
 CCTV-7(江苏移动-1920*1088),http://183.207.249.6/PLTV/3/224/3221225546/index.m3u8
 CCTV-7(江苏移动-1920*1088),http://183.207.249.9/PLTV/3/224/3221225546/1.m3u8
 CCTV-7(南宁联通-1920*1088),http://121.31.30.90:8085/ysten-business/live/cctv-7/1.m3u8
-CCTV-7(南宁联通-1920*1088),http://121.31.30.90:8085/ysten-business/live/cctv-7/yst.m3u8
 CCTV-7FHD(浙江移动-1920*1088),http://117.148.187.37/PLTV/88888888/224/3221226122/index.m3u8
 CCTV-7HD(江苏移动-1920*1088),http://183.207.249.71/PLTV/3/224/3221225546/index.m3u8
 CCTV-7HD(江西移动-1920*1088),http://117.169.120.140:8080/live/cctv-7/.m3u8
@@ -103,7 +98,6 @@ CCTV-10HD(江西移动-1920*1088),http://117.169.120.140:8080/live/cctv-10/.m3u8
 CCTV-10HD(南宁移动-1920*1088),http://39.135.32.24:6610/000000001000/1000000001000023734/index.m3u8?i
 CCTV-11(北邮IVI-720*576),http://ivi.bupt.edu.cn/hls/cctv11.m3u8
 CCTV-11(江苏移动-720*576),http://223.110.245.153/ott.js.chinamobile.com/PLTV/3/224/3221227384/index.m3u8
-CCTV-11(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-11/1.m3u8
 CCTV-11(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-11/yst.m3u8
 CCTV-11HD(江西移动-1920*1088),http://117.169.120.140:8080/live/cctv-11/.m3u8
 CCTV-12(北邮IVI-720*576),http://ivi.bupt.edu.cn/hls/cctv12.m3u8
@@ -116,7 +110,6 @@ CCTV-12HD(江苏移动-1920*1088),http://223.110.245.172/PLTV/3/224/3221225556/index
 CCTV-13(北邮IVI-720*576),http://ivi.bupt.edu.cn/hls/cctv13.m3u8
 CCTV-13(江苏移动-1920*1088),http://183.207.249.14/PLTV/3/224/3221225560/index.m3u8
 CCTV-13(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-13/1.m3u8
-CCTV-13(南宁联通-1280*720),http://121.31.30.90:8085/ysten-business/live/cctv-13/yst.m3u8
 CCTV-13FHD(浙江移动-1920*1088),http://117.148.187.37/PLTV/88888888/224/3221226763/index.m3u8
 CCTV-13HD(江苏移动-1920*1088),http://183.207.249.71/PLTV/3/224/3221225560/index.m3u8
 CCTV-13HD(江西移动-1920*1088),http://117.169.120.140:8080/live/cctv-13/.m3u8
