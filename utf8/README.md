@@ -15,7 +15,7 @@ iconv -f GBK -t UTF-8 data.csv > utf8/data.csv
   - `cctv`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv-simple.txt)
-  - `difang`
+  - `weishi`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi-simple.txt)
   - `difang`
