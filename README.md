@@ -22,7 +22,7 @@ TLDR: 太闲了。
   - `cctv`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv-simple.txt)
-  - `difang`
+  - `weishi`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi-simple.txt)
   - `difang`
