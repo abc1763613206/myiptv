@@ -34,8 +34,8 @@ TLDR: 太闲了。
 
 -----
 
-**现已提供从 [ EPG 频道列表](http://epg.51zmt.top:8000/) 匹配的 `m3u8` 文件！详见 [epg/README.md](epg/README.md)**
-
+- **现已提供从 [ EPG 频道列表](http://epg.51zmt.top:8000/) 匹配的 `m3u8` 文件！详见 [epg/README.md](epg/README.md)**
+- 如果您的播放器对编码有特殊要求或出现乱码问题，我们一并提供了[ **UTF-8 格式版本**](utf8/README.md)
 
 - 由于目前主要还是自用，故打算每次手动生成。
 - `merged` 为全部直播源，`groups` 文件夹里为各个直播源的分类。
