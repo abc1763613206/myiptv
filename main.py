@@ -14,6 +14,7 @@ from sys import stdout
 from termcolor import colored, RESET
 from datetime import datetime
 from func_timeout import func_set_timeout, FunctionTimedOut
+from requests.adapters import HTTPAdapter
 dt=datetime.now()
 # Channel	Group	Source	Link
 
@@ -39,8 +40,9 @@ def get_stream(num, clist, uri):
 def check_channel(clist,num):
     # clist 为一行 csv
     uri = clist[3]
+    requests.adapters.DEFAULT_RETRIES = 6
     try:
-        r = requests.get(clist[3], timeout=5) # 先测能不能正常访问
+        r = requests.get(clist[3], timeout=6) # 先测能不能正常访问
         if(r.status_code == requests.codes.ok):
             #ffprobe = FFprobe(inputs={uri: '-v warning'})
             #errors = tuple(filter(
@@ -144,7 +146,7 @@ def main():
                     print('{},{},{},{}'.format(row[0],row[1],row[2],row[3]), file=f0)
                     Total = Total + 1
                 num = num + 1
-                time.sleep(1)
+                time.sleep(1.5)
     print('Total: {}'.format(Total))
 if __name__ == '__main__':
     main()
