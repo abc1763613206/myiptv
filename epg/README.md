@@ -13,7 +13,7 @@
   - `cctv`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv.m3u)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/cctv-simple.m3u)
-  - `difang`
+  - `weishi`
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi.m3u)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.m3u`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/epg/weishi-simple.m3u)
   - `difang`
