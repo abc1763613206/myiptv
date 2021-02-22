@@ -12,12 +12,15 @@ iconv -f GBK -t UTF-8 data.csv > utf8/data.csv
   - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/merged.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/merged.txt)
   - 不带来源： [`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/merged-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/merged-simple.txt)
 - 分类
-  - `cctv`
+  - `cctv`（央视系频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/cctv-simple.txt)
-  - `weishi`
+  - `weishi`（卫视频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/weishi-simple.txt)
-  - `difang`
+  - `difang`（地方频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/difang.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/difang.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/difang-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/difang-simple.txt)
+  - `special`（IPTV 等特色频道）
+    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/special.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/special.txt)
+    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/special-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/utf8/groups/special-simple.txt)

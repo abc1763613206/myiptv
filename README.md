@@ -1,5 +1,5 @@
 # myiptv
-自用直播源集合，附带检测与分类功能。
+**自用**直播源集合，附带检测与分类功能。
 
 ### 为啥搞
 TLDR: 太闲了。
@@ -9,7 +9,9 @@ TLDR: 太闲了。
 - 网上现有的直播源太杂，且缺乏检测。
 - 一些大源缺乏持续更新，如 `iptv-org`。
 
-### 使用指南与 TODO
+### 使用指南
+
+**提前声明：出于自用，内含大量山东移动源，非对应线路的用户如遇这类标注请直接跳过！**
 
 ~~每次进行大更新后都会进行一次 release ，所以您可以在 jsDelivr 获得最新更新。~~
 **现已不再进行人工 release！** 不过这并不妨碍您去 jsDelivr 获得最新更新。
@@ -19,38 +21,53 @@ TLDR: 太闲了。
   - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/merged.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/merged.txt)
   - 不带来源： [`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/merged-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/merged-simple.txt)
 - 分类
-  - `cctv`
+  - `cctv`（央视系频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/cctv-simple.txt)
-  - `weishi`
+  - `weishi`（卫视频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/weishi-simple.txt)
-  - `difang`
+  - `difang`（地方频道）
     - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/difang.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/difang.txt)
     - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/difang-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/difang-simple.txt)
+  - `special`（IPTV 等特色频道）
+    - 带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/special.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/special.txt)
+    - 不带来源：[`https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/special-simple.txt`](https://cdn.jsdelivr.net/gh/abc1763613206/myiptv@latest/groups/special-simple.txt)
 
 
-
-
+关于分类：
+目前的分类实在粗浅，如果有更好的分类方式欢迎指明。
+| 标记 | 类别 | 备注 |
+| ---- | ---- | ---- |  
+| `cctv` | 央视系频道 | 包含 **CGTN**，**中央新影**系 |
+| `weishi` | 卫视频道 | 一般是上星频道，额外包含**凤凰卫视**、**星空卫视**（其他地方的难以分类，会归入 `difang` 分支，如**台视**，**华视**，**ABC** |
+| `difang` | 地方自建频道 | 名声较好的地方自建频道会归类到这里，如**金鹰卡通**；如果该频道有明显的地方自建特征也会归到这里， 如**上海这一刻**实景直播。另外收录一些官方非央视系频道（如**中国教育**、**中国交通**）|
+| `special` | IPTV 等特色频道 | 主要收录前面难以分类的频道。主要包含地方 IPTV 特色频道（如**NewTV**系（包含地方频道如**NewTV吉林**）、**海看**系）、网络频道（如**第一财经**、**直播中国**）、有线扩展频道（如**弈坛春秋**） 、**测试频道/片段**、网络影院等（**包含不能观看的付费频道！**）|
 
 -----
 
 - **现已提供从 [ EPG 频道列表](http://epg.51zmt.top:8000/) 匹配的 `m3u8` 文件！详见 [epg/README.md](epg/README.md)**
 - 如果您的播放器对编码有特殊要求或出现乱码问题，我们一并提供了[ **UTF-8 格式版本**](utf8/README.md)
 
+### 注意事项(使用前必读)
+
 - 由于目前主要还是自用，故打算每次手动生成。
 - `merged` 为全部直播源，`groups` 文件夹里为各个直播源的分类。
 - 带 `simple` 的为纯净格式**（不带来源与分辨率）**
 - 目前~~只输出了 `txt` 格式~~，急着用的可以自行用 [Telelist](https://guihet.com/tvlive-telelist.html) 进行转换，其他格式慢慢写。
-- 关于**分类**： `difang` 分类为地方频道与 IPTV 特色频道（含部分海外频道），`cctv` 为 CCTV 下属频道（含部分特色频道与 CGTN），`weishi` 为地方卫视（含凤凰卫视）
-- 关于来源与命名：频道命名尽量遵循[ EPG 频道列表](http://epg.51zmt.top:8000/) 中的格式进行命名统一以确保正确匹配；来源命名多使用 IPIP 进行 IP 段标注，`difang` 分类为目测（小地方台基本上只有官方供源，要是挨个查 IP 的话会出事）
-- 尽量进行命名统一，详见[命名映射表](MAPPING.md)
+- 关于来源与命名：频道命名尽量遵循[ EPG 频道列表](http://epg.51zmt.top:8000/) 中的格式进行命名统一以确保正确匹配；来源多来自上游节目源，对于未知的多使用 IPIP 进行 IP 段标注。
+- 对于不同直播源出现的不同ID，我尽量进行了命名统一，一些特殊的约定详见[命名映射表](MAPPING.md)
 - ~~现阶段可以下载直播源上传至 [ EPG 频道列表](http://epg.51zmt.top:8000/)自动匹配节目表。~~
 - 脚本所做的工作：通过 `requests` 和 `ffprobe` 检测直播源，后进行分类，最后用有效信息输出新的 `csv`。
-- 比较重要的一点：我主要使用家机（当前是北方移动）进行检测，直播源可用性对地区依赖较大，有必要时请自行跑脚本检测。
+- 比较重要的一点：我主要使用家机（当前是**山东移动**）进行检测，**直播源可用性对地区依赖较大**，有必要时请自行跑脚本检测。
+- 山东移动的IP基本上全转内网了，因此**非山东**的可以**直接跳过**标注为「山东移动」的源！
+- 补充一点：对于特定的源，一般来说可用性顺序：`同省同运营商>同省异运营商>外省同运营商>外省异运营商`。
 - 脚本会去除仅音频/视频的直播源，所以该源**显然不含音频广播/无声直播**。
 - 部分直播源限制连接数，如有需要请自行设置延时。
-- 不加组播地址，理论上公网均可看。
+- 不加组播地址，理论上公网均可看。**部分源受地区所限不能观看，由于其自用的性质不予撤下，这时尝试请更换到其他源。**  
+- `special` 分支内可能会包含一些**付费频道**，为保持完整性故不予筛掉，一般情况下**无法观看**，敬请谅解。
+- 部分源会用方括号注明描述，做一个合格的搬运工。
+- 通过人工筛选，尽量避免了粗略扫源造成的频道不对应情况。
 - TODO：添加新格式、新直播源，优化脚本。
 
 ## 免责声明
@@ -63,7 +80,10 @@ TLDR: 太闲了。
 
 该免责声明参考了 [iptv-org/iptv](https://github.com/iptv-org/iptv) ，在此表示感谢。    
 
+
+## 引用感谢
 下面列出了**显式**引用节目源的来源，在此向提供者一并表示感谢：  
 - [iptv-org/iptv](https://github.com/iptv-org/iptv)
 - [北邮 IVI 测试](http://ivi.bupt.edu.cn/)
 - [imDazui/Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8)
+- 

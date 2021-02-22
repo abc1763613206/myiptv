@@ -9,6 +9,8 @@ url = 'http://epg.51zmt.top:8000/upload/'
 
 def get_epg(a, b):
     f = os.path.join(a, b)
+    if ('utf8' in f) or ('ignored' in f):
+        return
     files = {'myfile': open(f,'rb')}
     print('Converting {}'.format(f))
     r = requests.post(url,files=files)

@@ -10,3 +10,4 @@
 | 高清 | HD | 对于纯英文频道如CGTN，可额外加`-` |
 | 中国教育 | CETV | |
 | CCTV-NEWS / CCTV-16 | CGTN | |
+| FHD | HD | |

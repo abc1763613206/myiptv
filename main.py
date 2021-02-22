@@ -16,7 +16,8 @@ from datetime import datetime
 from func_timeout import func_set_timeout, FunctionTimedOut
 from requests.adapters import HTTPAdapter
 dt=datetime.now()
-# Channel	Group	Source	Link
+# Channel	Group	Source	Link    Description
+# Description 应当对该源的已知参数进行标注（如码率，HDR）
 
 SKIP_FFPROBE_MESSAGES = [re.compile(pattern) for pattern in (
 	'Last message repeated',
@@ -26,7 +27,7 @@ SKIP_FFPROBE_MESSAGES = [re.compile(pattern) for pattern in (
 
 uniqueList = []
 
-@func_set_timeout(16)
+@func_set_timeout(18)
 def get_stream(num, clist, uri):
     try:
         ffprobe = FFprobe(inputs={uri: '-v error -show_format -show_streams -print_format json'})
@@ -40,9 +41,9 @@ def get_stream(num, clist, uri):
 def check_channel(clist,num):
     # clist 为一行 csv
     uri = clist[3]
-    requests.adapters.DEFAULT_RETRIES = 6
+    requests.adapters.DEFAULT_RETRIES = 3
     try:
-        r = requests.get(clist[3], timeout=6) # 先测能不能正常访问
+        r = requests.get(clist[3], timeout=4) # 先测能不能正常访问
         if(r.status_code == requests.codes.ok):
             #ffprobe = FFprobe(inputs={uri: '-v warning'})
             #errors = tuple(filter(
@@ -106,6 +107,13 @@ def rm_files(target, selection):
             pass   
         
 
+def getdes(st): # 不是所有的源都有描述
+    if st:
+        return '[{}]'.format(st)
+    else:
+        return ''
+
+
 def main():
     print_info()
     Total = 0
@@ -121,7 +129,7 @@ def main():
         headers = next(f_csv)
         num = 1
         with open('data{}.csv'.format(fulltimes), 'a+') as f0: # 写入检测后新data
-            print('Channel,Group,Source,Link', file=f0)
+            print('Channel,Group,Source,Link,Description', file=f0)
             for row in f_csv:
                 try:
                     if row[3] in uniqueList:
@@ -136,17 +144,17 @@ def main():
                     ret = False
                 if(ret): # 通过，写入
                     with open('groups/{}{}.txt'.format(row[1],times), 'a+') as f1:
-                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
                     with open('groups/{}-simple{}.txt'.format(row[1],times), 'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     with open('merged{}.txt'.format(times),'a+') as f1:
-                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
                     with open('merged-simple{}.txt'.format(times),'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     print('{},{},{},{}'.format(row[0],row[1],row[2],row[3]), file=f0)
                     Total = Total + 1
                 num = num + 1
-                time.sleep(1.5)
+                #time.sleep(0.25)
     print('Total: {}'.format(Total))
 if __name__ == '__main__':
     main()
