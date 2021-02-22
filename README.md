@@ -86,4 +86,4 @@ TLDR: 太闲了。
 - [iptv-org/iptv](https://github.com/iptv-org/iptv)
 - [北邮 IVI 测试](http://ivi.bupt.edu.cn/)
 - [imDazui/Tvlist-awesome-m3u-m3u8](https://github.com/imDazui/Tvlist-awesome-m3u-m3u8)
-- 
+- [SPX372928/MyIPTV](https://github.com/SPX372928/MyIPTV)
