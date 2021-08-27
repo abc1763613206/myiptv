@@ -1,4 +1,4 @@
-Channel,Group,Source,Link,Description
+Channel,Group,Source,Link
 CCTV-1,cctv,北京移动[CDN],http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226432/1.m3u8
 CCTV-1,cctv,北京移动[CDN],http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226338/1.m3u8
 CCTV-1,cctv,合肥电信[爱上],http://117.71.37.17/live.aishang.ctlcdn.com/00000110240001_1/playlist.m3u8?CONTENTID=00000110240001_1
