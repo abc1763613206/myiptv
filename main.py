@@ -144,11 +144,13 @@ def main():
                     ret = False
                 if(ret): # 通过，写入
                     with open('groups/{}{}.txt'.format(row[1],times), 'a+') as f1:
-                        print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
+                        # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
                     with open('groups/{}-simple{}.txt'.format(row[1],times), 'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     with open('merged{}.txt'.format(times),'a+') as f1:
-                        print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
+                        # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
                     with open('merged-simple{}.txt'.format(times),'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     print('{},{},{},{}'.format(row[0],row[1],row[2],row[3]), file=f0)
