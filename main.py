@@ -25,6 +25,7 @@ SKIP_FFPROBE_MESSAGES = [re.compile(pattern) for pattern in (
 	'number of reference frames .+ exceeds max',
 )]
 
+
 uniqueList = []
 
 @func_set_timeout(18)
@@ -43,7 +44,7 @@ def check_channel(clist,num):
     uri = clist[3]
     requests.adapters.DEFAULT_RETRIES = 3
     try:
-        r = requests.get(clist[3], timeout=4) # 先测能不能正常访问
+        r = requests.get(clist[3], timeout=1.5) # 先测能不能正常访问
         if(r.status_code == requests.codes.ok):
             #ffprobe = FFprobe(inputs={uri: '-v warning'})
             #errors = tuple(filter(
