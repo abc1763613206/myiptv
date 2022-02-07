@@ -59,11 +59,19 @@ def check_channel(clist,num):
             if cdata:
                 flagAudio = 0
                 flagVideo = 0
+                flagHDR = 0
+                flagHEVC = 0
                 vwidth = 0
                 vheight = 0
                 for i in cdata['streams']:
                     if i['codec_type'] == 'video':
                         flagVideo = 1
+                        if 'color_space' in i:
+                            # https://www.reddit.com/r/ffmpeg/comments/kjwxm9/how_to_detect_if_video_is_hdr_or_sdr_batch_script/
+                            if 'bt2020' in i['color_space']:
+                                flagHDR = 1
+                        if i['codec_name'] == 'hevc':
+                            flagHEVC = 1
                         if vwidth <= i['coded_width']: # 取最高分辨率
                             vwidth = i['coded_width']
                             vheight = i['coded_height']
@@ -75,8 +83,18 @@ def check_channel(clist,num):
                 if flagVideo == 0:
                     print('[{}] {}({}) Error: Audio Only!'.format(str(num), clist[0], clist[2]))
                     return False
-                print('[{}] {}({}) PASS: {}*{}'.format(str(num), clist[0], clist[2], vwidth, vheight))
-                return [vwidth,vheight]
+                if (vwidth == 0) or (vheight == 0):
+                    print('[{}] {}({}) Error: {}x{}'.format(str(num), clist[0], clist[2],vwidth,vheight))
+
+                if flagHDR == 0:
+                    print('[{}] {}({}) PASS: {}*{}'.format(str(num), clist[0], clist[2], vwidth, vheight))
+                    return [vwidth,vheight,'']
+                if flagHDR == 1:
+                    print('[{}] {}({}) PASS(HDR Enabled): {}*{}'.format(str(num), clist[0], clist[2], vwidth, vheight))
+                    return [vwidth,vheight,'HDR']
+                if flagHEVC == 1: # https://news.ycombinator.com/item?id=19389496  默认有HDR的算HEVC
+                    print('[{}] {}({}) PASS(HEVC Enabled): {}*{}'.format(str(num), clist[0], clist[2], vwidth, vheight))
+                    return [vwidth,vheight,'HEVC']
             else:
                 return False
         else:
@@ -114,7 +132,7 @@ def getdes(st): # 不是所有的源都有描述
     else:
         return ''
 
-
+# TODO:
 def main():
     print_info()
     Total = 0
@@ -125,11 +143,11 @@ def main():
     rm_files('groups',1)
     rm_files('merged.txt',2)
     rm_files('merged-simple.txt',2)
-    with open('data.csv') as f:
+    with open('data.csv' ) as f:
         f_csv = csv.reader(f)
         headers = next(f_csv)
         num = 1
-        with open('data{}.csv'.format(fulltimes), 'a+') as f0: # 写入检测后新data
+        with open('data{}.csv'.format(fulltimes), 'a+' ) as f0: # 写入检测后新data
             print('Channel,Group,Source,Link', file=f0)
             for row in f_csv:
                 try:
@@ -146,18 +164,18 @@ def main():
                 if(ret): # 通过，写入
                     with open('groups/{}{}.txt'.format(row[1],times), 'a+') as f1:
                         # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
-                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}-{}P{}),{}'.format(row[0],row[2],ret[1],ret[2],row[3]), file=f1)
                     with open('groups/{}-simple{}.txt'.format(row[1],times), 'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     with open('merged{}.txt'.format(times),'a+') as f1:
                         # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
-                        print('{}({}-{}*{}),{}'.format(row[0],row[2],ret[0],ret[1],row[3]), file=f1)
+                        print('{}({}-{}P{}),{}'.format(row[0],row[2],ret[1],ret[2],row[3]), file=f1)
                     with open('merged-simple{}.txt'.format(times),'a+') as f1:
                         print('{},{}'.format(row[0],row[3]), file=f1)
                     print('{},{},{},{}'.format(row[0],row[1],row[2],row[3]), file=f0)
                     Total = Total + 1
                 num = num + 1
-                #time.sleep(0.25)
+                time.sleep(0.25)
     print('Total: {}'.format(Total))
 if __name__ == '__main__':
     main()
