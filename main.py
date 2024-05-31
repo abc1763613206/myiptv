@@ -166,7 +166,7 @@ def main():
         f_csv = csv.reader(f)
         headers = next(f_csv)
         num = 1
-        with open('data{}.csv'.format(fulltimes), 'a+') as f0:  # 写入检测后新data
+        with open('data{}.csv'.format(fulltimes), 'a+', encoding='gb18030') as f0:  # 写入检测后新data
             print('Channel,Group,Source,Link', file=f0)
             for row in f_csv:
                 try:
