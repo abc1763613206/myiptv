@@ -162,7 +162,7 @@ def main():
     rm_files('groups', 1)
     rm_files('merged.txt', 2)
     rm_files('merged-simple.txt', 2)
-    with open('data.csv') as f:
+    with open('data.csv', encoding='gb18030') as f:
         f_csv = csv.reader(f)
         headers = next(f_csv)
         num = 1
@@ -182,23 +182,23 @@ def main():
                         str(num), row[0], row[2], str(e)))
                     ret = False
                 if (ret):  # 通过，写入
-                    with open('groups/{}{}.txt'.format(row[1], times), 'a+') as f1:
+                    with open('groups/{}{}.txt'.format(row[1], times), 'a+', encoding='gb18030') as f1:
                         # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
                         print(
                             '{}({}-{}P{}),{}'.format(row[0], row[2], ret[1], ret[2], row[3]), file=f1)
-                    with open('groups/{}-simple{}.txt'.format(row[1], times), 'a+') as f1:
+                    with open('groups/{}-simple{}.txt'.format(row[1], times), 'a+', encoding='gb18030') as f1:
                         print('{},{}'.format(row[0], row[3]), file=f1)
-                    with open('merged{}.txt'.format(times), 'a+') as f1:
+                    with open('merged{}.txt'.format(times), 'a+', encoding='gb18030') as f1:
                         # print('{}({}{}-{}*{}),{}'.format(row[0],row[2],getdes(row[4]),ret[0],ret[1],row[3]), file=f1)
                         print(
                             '{}({}-{}P{}),{}'.format(row[0], row[2], ret[1], ret[2], row[3]), file=f1)
-                    with open('merged-simple{}.txt'.format(times), 'a+') as f1:
+                    with open('merged-simple{}.txt'.format(times), 'a+', encoding='gb18030') as f1:
                         print('{},{}'.format(row[0], row[3]), file=f1)
                     print('{},{},{},{}'.format(
                         row[0], row[1], row[2], row[3]), file=f0)
                     Total = Total + 1
                 num = num + 1
-                time.sleep(0.25)
+                time.sleep(0.2)
     print('Total: {}'.format(Total))
 
 
