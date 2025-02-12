@@ -29,7 +29,7 @@ SKIP_FFPROBE_MESSAGES = [re.compile(pattern) for pattern in (
 uniqueList = []
 
 
-@func_set_timeout(18)
+@func_set_timeout(6)
 def get_stream(num, clist, uri):
     try:
         ffprobe = FFprobe(
@@ -49,7 +49,7 @@ def check_channel(clist, num):
     uri = clist[3]
     requests.adapters.DEFAULT_RETRIES = 3
     try:
-        r = requests.get(clist[3], timeout=3)  # 先测能不能正常访问
+        r = requests.get(clist[3], timeout=1)  # 先测能不能正常访问
         if (r.status_code == requests.codes.ok):
             # ffprobe = FFprobe(inputs={uri: '-v warning'})
             # errors = tuple(filter(
@@ -148,7 +148,6 @@ def getdes(st):  # 不是所有的源都有描述
     else:
         return ''
 
-# TODO:
 
 
 def main():
@@ -198,7 +197,7 @@ def main():
                         row[0], row[1], row[2], row[3]), file=f0)
                     Total = Total + 1
                 num = num + 1
-                time.sleep(0.2)
+                # time.sleep(0.2)
     print('Total: {}'.format(Total))
 
 
