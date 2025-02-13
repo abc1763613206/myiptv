@@ -4,7 +4,7 @@ import json
 import os
 import re
 import traceback
-import requests
+import httpx
 import subprocess
 import time
 import shutil
@@ -14,7 +14,7 @@ from sys import stdout
 from termcolor import colored, RESET
 from datetime import datetime
 from func_timeout import func_set_timeout, FunctionTimedOut
-from requests.adapters import HTTPAdapter
+
 dt = datetime.now()
 # Channel	Group	Source	Link    Description
 # Description 应当对该源的已知参数进行标注（如码率，HDR）
@@ -47,70 +47,67 @@ def get_stream(num, clist, uri):
 def check_channel(clist, num):
     # clist 为一行 csv
     uri = clist[3]
-    requests.adapters.DEFAULT_RETRIES = 3
     try:
-        r = requests.get(clist[3], timeout=1)  # 先测能不能正常访问
-        if (r.status_code == requests.codes.ok):
-            # ffprobe = FFprobe(inputs={uri: '-v warning'})
-            # errors = tuple(filter(
-            #    lambda line: not (line in ('', RESET) or any(regex.search(line) for regex in SKIP_FFPROBE_MESSAGES)),
-            #    ffprobe.run(stderr=PIPE)[1].decode('utf-8').split('\n')
-            # ))
-            # if errors: # https://github.com/Jamim/iptv-checker/blob/master/iptv-checker.py#L26
-            #    print('[{}] {}({}) Error:{}'.format(str(num), clist[0], clist[2], str(errors)))
-            #    return False
-            # else: # 查视频信息
-            cdata = get_stream(num, clist, uri)
-            if cdata:
-                flagAudio = 0
-                flagVideo = 0
-                flagHDR = 0
-                flagHEVC = 0
-                vwidth = 0
-                vheight = 0
-                for i in cdata['streams']:
-                    if i['codec_type'] == 'video':
-                        flagVideo = 1
-                        if 'color_space' in i:
-                            # https://www.reddit.com/r/ffmpeg/comments/kjwxm9/how_to_detect_if_video_is_hdr_or_sdr_batch_script/
-                            if 'bt2020' in i['color_space']:
-                                flagHDR = 1
-                        if i['codec_name'] == 'hevc':
-                            flagHEVC = 1
-                        if vwidth <= i['coded_width']:  # 取最高分辨率
-                            vwidth = i['coded_width']
-                            vheight = i['coded_height']
-                    elif i['codec_type'] == 'audio':
-                        flagAudio = 1
-                if flagAudio == 0:
-                    print('[{}] {}({}) Error: Video Only!'.format(
-                        str(num), clist[0], clist[2]))
-                    return False
-                if flagVideo == 0:
-                    print('[{}] {}({}) Error: Audio Only!'.format(
-                        str(num), clist[0], clist[2]))
-                    return False
-                if (vwidth == 0) or (vheight == 0):
-                    print('[{}] {}({}) Error: {}x{}'.format(
-                        str(num), clist[0], clist[2], vwidth, vheight))
+        with httpx.Client(timeout=0.5) as client:
+            ReqStatus = False
+            try:
+                r = client.get(clist[3], follow_redirects=True)
+                if r.status_code == 200:
+                    ReqStatus = True
+            except httpx.UnsupportedProtocol:
+                ReqStatus = True
+            if ReqStatus:
+                cdata = get_stream(num, clist, uri)
+                if cdata:
+                    flagAudio = 0
+                    flagVideo = 0
+                    flagHDR = 0
+                    flagHEVC = 0
+                    vwidth = 0
+                    vheight = 0
+                    for i in cdata['streams']:
+                        if i['codec_type'] == 'video':
+                            flagVideo = 1
+                            if 'color_space' in i:
+                                # https://www.reddit.com/r/ffmpeg/comments/kjwxm9/how_to_detect_if_video_is_hdr_or_sdr_batch_script/
+                                if 'bt2020' in i['color_space']:
+                                    flagHDR = 1
+                            if i['codec_name'] == 'hevc':
+                                flagHEVC = 1
+                            if vwidth <= i['coded_width']:  # 取最高分辨率
+                                vwidth = i['coded_width']
+                                vheight = i['coded_height']
+                        elif i['codec_type'] == 'audio':
+                            flagAudio = 1
+                    if flagAudio == 0:
+                        print('[{}] {}({}) Error: Video Only!'.format(
+                            str(num), clist[0], clist[2]))
+                        return False
+                    if flagVideo == 0:
+                        print('[{}] {}({}) Error: Audio Only!'.format(
+                            str(num), clist[0], clist[2]))
+                        return False
+                    if (vwidth == 0) or (vheight == 0):
+                        print('[{}] {}({}) Error: {}x{}'.format(
+                            str(num), clist[0], clist[2], vwidth, vheight))
 
-                if flagHDR == 0:
-                    print('[{}] {}({}) PASS: {}*{}'.format(str(num),
-                          clist[0], clist[2], vwidth, vheight))
-                    return [vwidth, vheight, '']
-                if flagHDR == 1:
-                    print('[{}] {}({}) PASS(HDR Enabled): {}*{}'.format(str(num),
-                          clist[0], clist[2], vwidth, vheight))
-                    return [vwidth, vheight, 'HDR']
-                if flagHEVC == 1:  # https://news.ycombinator.com/item?id=19389496  默认有HDR的算HEVC
-                    print('[{}] {}({}) PASS(HEVC Enabled): {}*{}'.format(str(num),
-                          clist[0], clist[2], vwidth, vheight))
-                    return [vwidth, vheight, 'HEVC']
+                    if flagHDR == 0:
+                        print('[{}] {}({}) PASS: {}*{}'.format(str(num),
+                              clist[0], clist[2], vwidth, vheight))
+                        return [vwidth, vheight, '']
+                    if flagHDR == 1:
+                        print('[{}] {}({}) PASS(HDR Enabled): {}*{}'.format(str(num),
+                              clist[0], clist[2], vwidth, vheight))
+                        return [vwidth, vheight, 'HDR']
+                    if flagHEVC == 1:  # https://news.ycombinator.com/item?id=19389496  默认有HDR的算HEVC
+                        print('[{}] {}({}) PASS(HEVC Enabled): {}*{}'.format(str(num),
+                              clist[0], clist[2], vwidth, vheight))
+                        return [vwidth, vheight, 'HEVC']
+                else:
+                    return False
             else:
-                return False
-        else:
-            print('[{}] {}({}) Error:{}'.format(
-                str(num), clist[0], clist[2], str(r.status_code)))
+                print('[{}] {}({}) Error:{}'.format(
+                    str(num), clist[0], clist[2], str(r.status_code)))
             return False
     except Exception as e:
         # traceback.print_exc()
