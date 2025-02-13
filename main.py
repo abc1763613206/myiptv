@@ -51,7 +51,7 @@ def check_channel(clist, num):
         with httpx.Client(timeout=0.5) as client:
             ReqStatus = False
             try:
-                r = client.get(clist[3], follow_redirects=True)
+                r = client.head(clist[3], follow_redirects=True)
                 if r.status_code == 200:
                     ReqStatus = True
             except httpx.UnsupportedProtocol:
